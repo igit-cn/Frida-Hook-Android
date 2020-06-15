@@ -1,5 +1,5 @@
 function sendp(message) {
-    send('['+_pname+'] '+message)
+    send('['+__process_name+'] '+message)
 }
 
 setImmediate(function() {
@@ -18,7 +18,7 @@ setImmediate(function() {
             sendp(e);
         }
 
-//        Hook okhttp3.g.a function
+//        Hook okhttp3.g.check function
         try {
             var CertificatePinner = Java.use('okhttp3.g');
             sendp('[+] OkHTTP 3.x (g.check mixed) Found');
@@ -61,7 +61,7 @@ setImmediate(function() {
                 sendp('[*] Android 7+ TrustManagerImpl.verifyChain() called');
                 return untrustedChain;
             }
-        } catch (err) {
+        } catch (e) {
             sendp(e);
         }
 
